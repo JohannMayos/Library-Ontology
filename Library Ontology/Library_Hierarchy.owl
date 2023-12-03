@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/library.owl"
+         xmlns="http://www.example.org/library.owl#">
+
+<owl:Ontology rdf:about="http://www.example.org/library.owl"/>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Author">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Work">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Book">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Category">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WrittenBy">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:domain rdf:resource="#Book"/>
+  <rdfs:range rdf:resource="#Author"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BookCategory">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:domain rdf:resource="#Book"/>
+  <rdfs:range rdf:resource="#Category"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#H.P Lovecraft">
+  <rdf:type rdf:resource="#Author"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#J.R.R Tolkien">
+  <rdf:type rdf:resource="#Author"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#The Lord of The Rings">
+  <rdf:type rdf:resource="#Book"/>
+  <WrittenBy rdf:resource="#H.P Lovecraft"/>
+  <BookCategory rdf:resource="#Fantasy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#The Call of Cthulhu">
+  <rdf:type rdf:resource="#Book"/>
+  <WrittenBy rdf:resource="#J.R.R Tolkien"/>
+  <BookCategory rdf:resource="#Eldritch Horror"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fantasy">
+  <rdf:type rdf:resource="#Category"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Eldritch Horror">
+  <rdf:type rdf:resource="#Category"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
